@@ -1,0 +1,3 @@
+[submodule "corelearning"]
+	path = corelearning
+	url = git@github.com:DeiC-HPC/corelearning.git

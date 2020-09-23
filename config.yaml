@@ -1,0 +1,9 @@
+homedir: /home/user
+user: user
+docker-image: slurm-debian
+docker-hostname: "linux0"
+websocket-host: "localhost"
+motd: |
+    Welcome to the SLURM learning terminal
+    The terminal is very limited and will only provide you with enough tools to help you learn how to use slurm.
+    Running time on the queue is also very limited as this is not the place to run your experiments.

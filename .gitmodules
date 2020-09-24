@@ -1,3 +1,3 @@
 [submodule "corelearning"]
 	path = corelearning
-	url = git@github.com:DeiC-HPC/corelearning.git
+	url = https://github.com/DeiC-HPC/slurmlearning.git

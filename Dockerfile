@@ -15,7 +15,7 @@ RUN systemctl enable slurmctld
 
 COPY slurm.conf /etc/slurm-llnl/slurm.conf
 
-COPY terminal-learning/server/term /usr/bin
+COPY corelearning/server/term /usr/bin
 RUN chmod +x /usr/bin/term
 
 RUN mkdir /home/user

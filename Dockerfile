@@ -24,7 +24,5 @@ COPY example_code /home/user/example_code
 RUN groupadd user && useradd -d /home/user -g user user
 RUN chown -R user:user /home/user
 
-USER user
-
 WORKDIR /home/user
 CMD service munge start && service slurmctld start && service slurmd start && tail -f /dev/null

@@ -2,7 +2,7 @@ The queue
 ---------
 
 When you want to see the current job queue you can use the command `squeue`.
-Running it on a system with many tasks in queue
+Running it on a system with many tasks in queue one can get something like this:
 
 ```plaintext
 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)

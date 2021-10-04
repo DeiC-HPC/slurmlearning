@@ -2,7 +2,7 @@ Cluster information
 -------------------
 
 When you have got access to the cluster, you can use the command `sinfo` to get information.
-Try running the command and you should see output similar to this.
+Try running the command and you should see an output similar to this:
 
 ```plaintext
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
@@ -17,5 +17,5 @@ NODELIST   NODES PARTITION       STATE CPUS    S:C:T MEMORY TMP_DISK WEIGHT AVAI
 linux0         1 learning*        idle    4    1:4:1      1        0      1   (null) none
 ```
 
-Here we can see that each node in the learning partition 4 cores. S:C:T means Sockets:Cores:Threads so it denotes how many sockets there are in each server, how many cores each CPU has, and how many threads there are per core.
+Here we can see that each node in the learning partition has 4 cores. S:C:T means Sockets:Cores:Threads so it denotes how many sockets there are in each server, how many cores each CPU has, and how many threads there are per core.
 If you want to know about more options you can use with `sinfo` then you can use `--help` as an argument.

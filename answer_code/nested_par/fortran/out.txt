@@ -1,0 +1,1 @@
+mpif90 -o ./main.exe main.f90 -fopenmp

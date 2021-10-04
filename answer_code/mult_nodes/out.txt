@@ -1,0 +1,25 @@
+make: `main.exe' is up to date.
+Starting thread 0 of process 2 on node s82n14.grendel.cscaa.dk
+Starting thread 1 of process 2 on node s82n14.grendel.cscaa.dk
+Hello World from thread 0 of process 2 on node s82n14.grendel.cscaa.dk.
+Hello World from thread 1 of process 2 on node s82n14.grendel.cscaa.dk.
+Finished thread 0 of process 2 on node s82n14.grendel.cscaa.dk
+Finished thread 1 of process 2 on node s82n14.grendel.cscaa.dk
+Starting thread 0 of process 0 on node s82n13.grendel.cscaa.dk
+Starting thread 1 of process 0 on node s82n13.grendel.cscaa.dk
+Hello World from thread 1 of process 0 on node s82n13.grendel.cscaa.dk.
+Hello World from thread 0 of process 0 on node s82n13.grendel.cscaa.dk.
+Finished thread 1 of process 0 on node s82n13.grendel.cscaa.dk
+Finished thread 0 of process 0 on node s82n13.grendel.cscaa.dk
+Starting thread 1 of process 1 on node s82n13.grendel.cscaa.dk
+Starting thread 0 of process 1 on node s82n13.grendel.cscaa.dk
+Hello World from thread 0 of process 1 on node s82n13.grendel.cscaa.dk.
+Hello World from thread 1 of process 1 on node s82n13.grendel.cscaa.dk.
+Finished thread 0 of process 1 on node s82n13.grendel.cscaa.dk
+Finished thread 1 of process 1 on node s82n13.grendel.cscaa.dk
+Starting thread 0 of process 3 on node s82n14.grendel.cscaa.dk
+Starting thread 1 of process 3 on node s82n14.grendel.cscaa.dk
+Hello World from thread 0 of process 3 on node s82n14.grendel.cscaa.dk.
+Hello World from thread 1 of process 3 on node s82n14.grendel.cscaa.dk.
+Finished thread 0 of process 3 on node s82n14.grendel.cscaa.dk
+Finished thread 1 of process 3 on node s82n14.grendel.cscaa.dk

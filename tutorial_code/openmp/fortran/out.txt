@@ -1,0 +1,7 @@
+make: `main.exe' is up to date.
+ Starting thread            1
+ Starting thread            0
+ Hello World from thread            1
+ Hello World from thread            0
+ Finished thread            1
+ Finished thread            0

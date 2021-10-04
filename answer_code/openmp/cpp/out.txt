@@ -1,0 +1,7 @@
+g++ -o main.exe main.cpp -fopenmp
+Starting thread 0
+Starting thread 1
+Hello World from thread 0 of 1
+Hello World from thread 1 of 1
+Finished thread 0
+Finished thread 1

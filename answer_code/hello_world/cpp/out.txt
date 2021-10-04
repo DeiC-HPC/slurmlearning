@@ -1,0 +1,2 @@
+g++ -o main.exe main.cpp
+Hello World!

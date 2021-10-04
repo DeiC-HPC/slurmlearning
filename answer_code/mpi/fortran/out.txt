@@ -1,0 +1,7 @@
+make: `main.exe' is up to date.
+ Starting process            0
+ Starting process            1
+ Hello World from process            0  of            1
+ Hello World from process            1  of            1
+ Finished process            0
+ Finished process            1

@@ -1,2 +1,0 @@
-make: `main.exe' is up to date.
-Hello World from job number 0 of 4

@@ -1,0 +1,5 @@
+*.txt
+*.exe
+*.sh
+!hello_world/*.sh
+!/limits/*.sh

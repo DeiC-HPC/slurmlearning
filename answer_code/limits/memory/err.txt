@@ -1,5 +1,0 @@
-g++: fatal error: Killed signal terminated program cc1plus
-compilation terminated.
-make: *** [main.exe] Error 1
-/var/spool/slurmd/job3488876/slurm_script: line 8: ./main.exe: No such file or directory
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=3488876.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

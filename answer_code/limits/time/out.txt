@@ -1,3 +1,0 @@
-g++ -o main.exe main.cpp
-Hello World!
-Sleeping for 120 seconds

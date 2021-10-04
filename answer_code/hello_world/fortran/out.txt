@@ -1,2 +1,0 @@
-gfortran -o ./main.exe main.f90
- Hello World!

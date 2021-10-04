@@ -1,9 +1,0 @@
-main.f90:12:45:
-
-   12 |     !$OMP PARALLEL private(num_thread, thread)
-      |                                             1
-Error: Symbol ‘thread’ at (1) has no IMPLICIT type; did you mean ‘num_thread’?
-make: *** [main.exe] Error 1
-slurmstepd: error: execve(): /home/nesnej/slurmlearning/nested_par/fortran/./main.exe: No such file or directory
-slurmstepd: error: execve(): /home/nesnej/slurmlearning/nested_par/fortran/./main.exe: No such file or directory
-srun: error: s83n24: tasks 0-1: Exited with exit code 2

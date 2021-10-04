@@ -1,7 +1,0 @@
-mpicxx -o ./main.exe main.cpp
-Starting process 0
-Starting process 1
-Hello World from process 0 of 1
-Hello World from process 1 of 1
-Finishing process 0
-Finishing process 1

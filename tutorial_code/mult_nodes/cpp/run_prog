@@ -6,20 +6,18 @@ cat > $1.sh <<%EOF%
 #SBATCH --error="err.txt"
 #SBATCH --time=00:00:30
 #SBATCH --mem=150M
-#SBATCH --nodes $2
-#SBATCH --ntasks-per-node $3
-#SBATCH --cpus-per-task $4
+#SBATCH --ntasks-per-node $2
+#SBATCH --cpus-per-task $3
 
 make
 srun ./main.exe
 %EOF%
 }
 
-name=mult_node
-nodes=2
+name=nested_cpp
 nproc=2
 ncpus=2
 export OMP_NUM_THREADS=${ncpus}
 
-make_run_file ${name} ${nodes} ${nproc} ${ncpus}
+make_run_file ${name} ${nproc} ${ncpus}
 sbatch ${name}.sh

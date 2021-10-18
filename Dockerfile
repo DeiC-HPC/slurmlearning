@@ -23,7 +23,7 @@ COPY tutorial_code/example_code /home/user/example_code
 COPY tutorial_code/hello_world /home/user/hello_world
 COPY tutorial_code/limits /home/user/limits
 COPY tutorial_code/run_file /home/user/run_file
-COPY tutorial_code/openmp /home/user/openmp
+COPY tutorial_code/omp /home/user/omp
 COPY tutorial_code/mpi /home/user/mpi
 COPY tutorial_code/nested_par /home/user/nested_par
 COPY tutorial_code/mult_nodes /home/user/mult_nodes

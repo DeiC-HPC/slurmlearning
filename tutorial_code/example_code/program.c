@@ -15,14 +15,14 @@ int main (int argc, char *argv[])
 
     printf ("Hello World from rank %d running on %s!\n", rank, name);
 
-    if (rank == 0 )
+    if (rank == 0)
        printf ("MPI World size = %d processes\n", size);
 
     long long j = 0;
     while (true) {
         j++;
     }
-    printf("%d", j);
+    printf("%lld", j);
 
     MPI_Finalize ();
 }

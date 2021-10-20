@@ -1,10 +1,14 @@
-FROM debian:buster
+# FROM debian:latest
+FROM ubuntu:latest
 STOPSIGNAL SIGRTMIN+3
 
-RUN apt update && apt -y install systemd cgroup-bin cgroup-tools cgroupfs-mount ssh sudo
-RUN apt install -y slurm-wlm slurm-wlm-basic-plugins
-RUN apt install -y munge libmunge2 make perl psmisc build-essential wget python python-pip python-dev python3 python3-pip python3-dev
-RUN apt install -y libopenmpi3 libopenmpi-dev openmpi-bin openmpi-common
+ENV TZ=Europe/Berlin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt update
+RUN apt install -y systemd ssh sudo slurm-wlm slurm-wlm-basic-plugins munge libmunge2 make perl psmisc build-essential wget python3 python3-pip python3-dev libopenmpi3 libopenmpi-dev openmpi-bin openmpi-common bash-completion vim emacs nano
+
+# TODO: Install newer version of slurm, https://slurm.schedmd.com/download.html, and installation guide, https://slurm.schedmd.com/quickstart_admin.html
 
 RUN mkdir /var/spool/slurmd
 RUN chown -R slurm:slurm /var/spool/slurm*
@@ -32,5 +36,7 @@ COPY tutorial_code/array_job /home/user/array_job
 RUN groupadd user && useradd -d /home/user -g user user
 RUN chown -R user:user /home/user
 
+USER user
 WORKDIR /home/user
-CMD service munge start && service slurmctld start && service slurmd start && tail -f /dev/null
+CMD /bin/bash
+#CMD service munge start && service slurmctld start && service slurmd start && tail -f /dev/null

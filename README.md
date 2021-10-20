@@ -14,6 +14,17 @@ Before we get started you should have the following programs installed:
 - Typescript
 - docker
 
+
+### Requirements to your docker
+This project uses the Docker API for communicating with the docker container
+over a websocket. So you will need to set your docker up to use a tcp listener.
+[More information can be found here.](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-socket-option)
+
+We recommend that the socket only listens to requests coming from localhost.
+If that is what you wish add `-H tcp://127.0.0.1:2375` to the startup of your
+docker server. If you want to use a different port or address then please do
+so, but remember to change `docker-url` in [config.yaml](config.yaml).
+
 ### Building the docker image
 
 To build the docker image run `docker build . -t slurm-debian`. This will

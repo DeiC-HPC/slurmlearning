@@ -47,6 +47,20 @@ From the root directory of this repository run the command
 
 The html can be hosted with any webserver.
 
+### Configuring the system
+The config file, [config.yaml](config.yaml), contains all information needed for
+the system to run. Some information is defined by the docker image and some is
+needed for corelearning.
+
+`websocket-host` is the ip of the server running the python backend. While
+developing, it should not be nessecary to change it away from 127.0.0.1. When
+deploying it should be set to the external IP address of your server.
+
+`docker-image` is the tag of the docker image. So if you used a different tag
+than described earlier in this guide, then you should set it here.
+
+`docker-url` has been described earlier.
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the process for

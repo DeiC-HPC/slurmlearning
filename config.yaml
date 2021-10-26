@@ -7,7 +7,7 @@ docker-startup-root-cmds:
     - service munge start
     - service slurmd start
     - service slurmctld start
-websocket-host: "192.168.42.4"
+websocket-host: "127.0.0.1"
 motd: |
     Welcome to the SLURM learning terminal
     The terminal is very limited and will only provide you with enough tools to help you learn how to use slurm.

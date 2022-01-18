@@ -11,14 +11,16 @@ RUN apt install -y systemd ssh sudo slurm-wlm slurm-wlm-basic-plugins munge libm
 # TODO: Install newer version of slurm, https://slurm.schedmd.com/download.html, and installation guide, https://slurm.schedmd.com/quickstart_admin.html
 # Currently the version of slurm-wlm is obtained from Ubuntu 21.10 under version (20.11.7+really20.11.4-2)
 
-RUN mkdir /var/spool/slurmd
-RUN chown -R slurm:slurm /var/spool/slurm*
+RUN mkdir /var/spool/slurmd && chown -R slurm:slurm /var/spool/slurm*
+RUN mkdir /var/log/slurm-llnl && chown -R slurm:slurm /var/log/slurm-llnl
 RUN touch /var/log/slurm_jobacct.log && chown slurm:slurm /var/log/slurm_jobacct.log
+RUN touch /var/log/slurm-llnl/slurmctld.log && chown slurm:slurm /var/log/slurm-llnl/slurmctld.log
 RUN systemctl enable munge
 RUN systemctl enable slurmd
 RUN systemctl enable slurmctld
 
 COPY slurm.conf /etc/slurm-llnl/slurm.conf
+COPY slurm.conf /etc/slurm/slurm.conf
 
 COPY corelearning/server/term /usr/bin
 RUN chmod +x /usr/bin/term

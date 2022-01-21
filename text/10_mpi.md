@@ -8,6 +8,7 @@ When running job using distributed memory parallelization one needs Slurm to all
 ```
 
 Slurm has its own wrapper script that runs the number of processes specified by the Slurm directive, called `srun`.
+`srun` is to be used in place of `mpirun` and it automatically sets the number of MPI processes according to the available number of tasks as specified through `#SBATCH` directives.
 
 Please navigate to the directory `~/mpi/cpp/` where you will find a Hello World program in C++ that implements distributed memory parallelism through MPI, a Makefile and a run script for the program.
 The program is written such that the standard output clearly, though artificially, shows that the program does indeed run in parallel.

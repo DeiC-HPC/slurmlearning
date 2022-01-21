@@ -12,7 +12,7 @@ To define a job as an array job one includes the directive
 #SBATCH --array=<index_min>-<index_max>%<batch_size>
 ```
 
-This runs the job for all integers in the interval $[$`<index_min>`$,$`<index_max>`$]$ in batches of size `<batch_size>`.
+This runs the job for all integers in the interval [`<index_min>`,`<index_max>`] in batches of size `<batch_size>`.
 More specifically `<batch_size>` is the maximum number of jobs allowed to run simultaneously.
 Array jobs are named `<job_id>_<array_index>`, but its appearence in the queue depends on the job status.
 A queue with array jobs might look something like this
@@ -27,4 +27,4 @@ JOBID       PARTITION   NAME        USER    ST      TIME    NODES
 3           learning    slurmscr    user    R       0:07        1
 ```
 
-Here the jobs with indices 0 and 1 of the array job with index 2 is currently running with the rest pending.
+Here the jobs with indices 0 and 1 of the array job with jobid 2 is currently running with the rest pending.

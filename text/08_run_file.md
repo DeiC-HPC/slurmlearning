@@ -9,13 +9,13 @@ Notice that lines 3-11 are essentially just an expanded version of the `slurmscr
 The basic structure of a shell script is that one defines variables using the syntax
 
 ```bash
-`<var_name>=<var_val>`
+<var_name>=<var_val>
 ```
 
 and functions as
 
 ```bash
-`<func_name>() {<func body here>}`
+<func_name>() {<func body here>}
 ```
 
 The function body can span multiple lines.
@@ -35,5 +35,5 @@ Once a shell script has been completed it can be run as `./<script_name>`
 Exercises
 ---
 1. Add comments to the shell script such that you comfortably understand the code.
-2. Run the script and check that it worked as intented.
+2. Run the script and check that it works as intented.
 3. Change the script such that e.g. the memory and time limits are passed as arguments to `make_run_file`.

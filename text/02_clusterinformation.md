@@ -9,7 +9,7 @@ PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 learning*    up       1:00      1   idle linux0
 ```
 
-This gives you information about the partitions on the system. Depending on the access you have to the cluster you might be able to run on all partitions or maybe only some of them. With the output here we see that there is one partition called `learning`, which is currently up, has a time limit of 1 minute, consists of 1 node, the state is idle, and the node names are linux0 (in bigger systems this could for example be `linux[0-99]` meaning there would be 100 nodes).
+This gives you information about the partitions on the system. Depending on the access you have to the cluster you might be able to run on all partitions or maybe only some of them. With the output here we see that there is one partition called `learning`, which is currently up, has a time limit of 1 minute, consists of 1 node, the state is idle, and the node name is linux0 (on larger systems this could for example be `linux[0-99]` meaning there would be 100 nodes).
 If you want information about the nodes on each partition then you can add `-Nl` as an argument.
 
 ```plaintext

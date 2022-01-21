@@ -15,7 +15,13 @@ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 ```
 
 Here we can see that the jobs with ID 2 and 3 are running because ST (state) is R (running). The rest are pending and that can be seen by their state PD.
-If you want to see your own jobs then you can add the argument `-u` and then a username, like this `squeue -u [user]` where `[user]` is swapped with your username.
-It is also possible to see how the queue looks like in prioritised order. This is done by running `squeue --priority --sort=-p,i --states=PD` It will sort the list such that the next job will be on top.
+If you only want to see your own jobs then you can add the argument `-u` and then a username, like this `squeue -u <user>` where `<user>` is swapped with your username.
+Slurm can also substitute your username using `$USER`.
+It is also possible to see how the queue looks like in prioritised order. This is done by running `squeue --priority --sort=-p,i --states=PD`.
+This will sort the list such that the next job will be on top.
 
 If you want to see it for a specific partition then you can use `squeue --priority --sort=-p,i --states=PD -p [partition_name]` where `[partition_name]` is change with the partition name.
+
+Exercises
+---
+1. Use `squeue --help` to browse the possible arguments squeue accepts.

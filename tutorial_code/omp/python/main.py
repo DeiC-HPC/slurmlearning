@@ -1,5 +1,5 @@
-# Technically the multiprocessing library does not use OpenMP,
-# but it does implement shared memory parallelism.
+# Technically the multiprocessing library does implement shared memory parallelism,
+# but one can allocate CPU-cores to the job in slurm as if it did.
 from multiprocessing import Pool
 from time import sleep
 

@@ -9,7 +9,7 @@ The basic structure of a Slurm script is:
 2. A set of instructions specifying names and settings.
 3. Code that upon execution runs the desired program.
 
-Please use `cat` to print the contents of `slurmscript.sh`.
+Open `slurmscript.sh` with your prefered editor (Vim).
 <br/>
 The first line of code in the script, `#!/bin/bash/`, defines the script language to be bash.
 <br/>
@@ -17,18 +17,18 @@ The command `#SBATCH` indicates that the rest of the line is an instruction to S
 <br/>
 `--job-name=hello_world_cpp` assigns the job the name `hello_world_cpp`,
 `--output` is used to specify the name of the file in which the standard output stream is placed
-and `--time` defines the time Slurm allocates for the program.
+and `--time` defines the time Slurm allocates for the job.
 If a program exceeds the allocated time Slurm will stop it.
-The format used for here for time is `hh:mm:ss` and other acceptable time formats can be seen in the time section of the [Slurm documentation](https://slurm.schedmd.com/sbatch.html).
+The format used here for time is `hh:mm:ss` and other acceptable time formats can be seen in the time section of the [Slurm documentation](https://slurm.schedmd.com/sbatch.html).
 <br/>
-The error stream can, like the output stream, be directed into a file using `--error`.
+The standard error stream can, like the standard output stream, be directed into a file using `--error`.
 
 Exercises
 ---
 1. Run the Slurm script using `sbatch slurmscript.sh` to submit the job to the Slurm queue.
 2. Write a Slurm script for either the fortran or python program.
 3. Redirect the error stream to a file called `err.txt` in your Slurm script.
-4. Run the Slurm script without redirecting the output stream
+4. Run the Slurm script without redirecting the output stream.
    1. What is the output file called?
    2. Does the name change with subsequent runs?
-5. *Extra*: Redo the above exercises for the other language
+5. *Extra*: Redo the above exercises for the other language.

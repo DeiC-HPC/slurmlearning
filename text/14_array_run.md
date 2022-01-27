@@ -3,7 +3,7 @@ Running array jobs
 
 To write job scripts for array jobs one needs variables to access the numbers that identify each job in the array.
 
-| Variable name | Slurm name
+| Variable name | Slurm name |
 | -- | -- |
 | Array job ID | `$SLURM_ARRAY_JOB_ID` |
 | Array index | `$SLURM_ARRAY_TASK_ID` |

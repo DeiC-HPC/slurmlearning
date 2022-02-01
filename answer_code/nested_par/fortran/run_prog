@@ -10,7 +10,7 @@ cat > $1.sh <<%EOF%
 #SBATCH --cpus-per-task $3
 
 make
-srun ./main.exe
+mpirun -np $2 ./main.exe
 %EOF%
 }
 

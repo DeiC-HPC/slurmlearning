@@ -4,7 +4,6 @@ from multiprocessing import Pool
 from time import sleep
 
 def hello(i):
-    sleep(1)
     print(f"Starting thread {i}")
     sleep(1)
     print(f"Hello World from thread {i}")

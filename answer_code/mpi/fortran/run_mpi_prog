@@ -9,7 +9,7 @@ cat > $1.sh <<%EOF%
 #SBATCH --ntasks-per-node=$2
 
 make
-srun ./main.exe
+mpirun -np $2 ./main.exe
 %EOF%
 }
 

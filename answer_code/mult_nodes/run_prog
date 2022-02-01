@@ -11,7 +11,7 @@ cat > $1.sh <<%EOF%
 #SBATCH --cpus-per-task $4
 
 make
-srun ./main.exe
+mpirun -np $SLURM_NTASKS ./main.exe
 %EOF%
 }
 

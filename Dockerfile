@@ -33,7 +33,7 @@ COPY tutorial_code/run_file /home/user/run_file
 COPY tutorial_code/omp /home/user/omp
 COPY tutorial_code/mpi /home/user/mpi
 COPY tutorial_code/nested_par /home/user/nested_par
-COPY tutorial_code/mult_nodes /home/user/mult_nodes
+COPY tutorial_code/mult_nodes/c /home/user/mult_nodes
 COPY tutorial_code/array_job /home/user/array_job
 
 RUN groupadd user && useradd -d /home/user -g user user

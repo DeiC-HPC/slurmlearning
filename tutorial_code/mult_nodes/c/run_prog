@@ -11,14 +11,14 @@ cat > $1.sh <<%EOF%
 #SBATCH --cpus-per-task $4
 
 make
-srun ./main.exe
+mpirun -np $2 ./main.exe
 %EOF%
 }
 
 name=mult_node
 nodes=2
 nproc=2
-ncpus=2
+ncpus=1
 export OMP_NUM_THREADS=${ncpus}
 
 make_run_file ${name} ${nodes} ${nproc} ${ncpus}

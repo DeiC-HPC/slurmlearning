@@ -26,8 +26,5 @@ Exercises
 ---
 1. This terminal is confined to a single node. Copy the program and run script to the cluster you have access to and run it.
 At this point you are hopefully fairly comfortable with the Slurm syntax for CPU allocation.
-<!---
-1. Run the program and check that it behaves as expected.
 2. Write a shell script that runs either the C++, fortran or python program. *Obs*: these programs will not print what nodes they run on.
 3. *Extra*: Redo the above exercises for the other languages
--->

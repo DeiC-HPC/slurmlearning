@@ -26,14 +26,16 @@ COPY corelearning/server/term /usr/bin
 RUN chmod +x /usr/bin/term
 
 RUN mkdir /home/user
-COPY tutorial_code/example_code /home/user/example_code
 COPY tutorial_code/hello_world /home/user/hello_world
 COPY tutorial_code/limits /home/user/limits
 COPY tutorial_code/run_file /home/user/run_file
 COPY tutorial_code/omp /home/user/omp
 COPY tutorial_code/mpi /home/user/mpi
 COPY tutorial_code/nested_par /home/user/nested_par
-COPY tutorial_code/mult_nodes/c /home/user/mult_nodes
+COPY tutorial_code/mult_nodes/c /home/user/mult_nodes/c
+COPY tutorial_code/mult_nodes/cpp /home/user/mult_nodes/cpp
+COPY tutorial_code/mult_nodes/fortran /home/user/mult_nodes/c
+COPY tutorial_code/mult_nodes/python /home/user/mult_nodes/python
 COPY tutorial_code/array_job /home/user/array_job
 
 RUN groupadd user && useradd -d /home/user -g user user

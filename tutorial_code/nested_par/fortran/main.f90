@@ -10,14 +10,13 @@ program hello
     call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierr)
 
     !$OMP PARALLEL private(num_thread, thread)
-    !    thread = 2*rank + num_thread
 
         call sleep(num_thread+1)
-        print *, "Starting process ", num_thread
+        print *, "Starting process ", num_thread, " on process ", rank
         call sleep(1)
         print *, "Hello World from thread ", num_thread, " on process ", rank
         call sleep(1)
-        print *, "Finished process ", num_thread
+        print *, "Finished process ", num_thread, " on process ", rank
     !$OMP END PARALLEL
     call MPI_FINALIZE(ierr)
 end program

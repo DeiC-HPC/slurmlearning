@@ -1,7 +1,7 @@
-Job parallelized with both distributed and shared memory 
+Job parallelized with both distributed and shared memory
 ---
 
-Using the tools for shared and distributed memory parallel jobs one can create jobs that combines the two approaches.
+Using the tools for shared and distributed memory parallel jobs one can create jobs that combine the two approaches.
 This done in the straightforward manner of adding directives for both to the Slurm script.
 
 Please navigate to the directory `~/nested_par/cpp/` where you will find a Hello World program in C++ that implements parallelism with both distributed and shared memory through MPI and OpenMP, a Makefile and a run script for the program.

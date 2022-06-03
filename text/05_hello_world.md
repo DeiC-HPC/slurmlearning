@@ -1,7 +1,7 @@
 Hello World
 ---------------------
 
-Please navigate to the directory `~/hello_world/cpp/` where you will fin a C++ program, a Makefile and a Slurm script to run the program.
+Please navigate to the directory `~/hello_world/cpp/` where you will find a C++ program, a Makefile and a Slurm script to run the program.
 
 The basic structure of a Slurm script is:
 
@@ -9,18 +9,22 @@ The basic structure of a Slurm script is:
 2. A set of instructions specifying names and settings.
 3. Code that upon execution runs the desired program.
 
-Open `slurmscript.sh` with your prefered editor (Vim).
-<br/>
+Open `slurmscript.sh` with your prefered editor (e.g. vim or emacs).
+
+
 The first line of code in the script, `#!/bin/bash/`, defines the script language to be bash.
-<br/>
+
+
 The command `#SBATCH` indicates that the rest of the line is an instruction to Slurm.
-<br/>
+
+
 `--job-name=hello_world_cpp` assigns the job the name `hello_world_cpp`,
 `--output` is used to specify the name of the file in which the standard output stream is placed
 and `--time` defines the time Slurm allocates for the job.
 If a program exceeds the allocated time Slurm will stop it.
 The format used here for time is `hh:mm:ss` and other acceptable time formats can be seen in the time section of the [Slurm documentation](https://slurm.schedmd.com/sbatch.html).
-<br/>
+
+
 The standard error stream can, like the standard output stream, be directed into a file using `--error`.
 
 Exercises

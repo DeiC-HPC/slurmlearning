@@ -35,5 +35,5 @@ Once a shell script has been completed it can be run as `./<script_name>`
 Exercises
 ---
 1. Add comments to the shell script such that you comfortably understand the code.
-2. Run the script and check that it works as intented.
+2. Run the script and check that it works as intended.
 3. Change the script such that e.g. the memory and time limits are passed as arguments to `make_run_file`.

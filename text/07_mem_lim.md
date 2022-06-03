@@ -1,7 +1,7 @@
 Memory limit
 ---
 
-Like the time limit the memory limit is a paramter Slurm uses to manage resources.
+Like the time limit the memory limit is a parameter Slurm uses to manage resources.
 Ideally one should set the memory limit in the same way that the time limit is set, i.e. between 110% and 120% of the expected maximum memory consumption.
 
 Exercises

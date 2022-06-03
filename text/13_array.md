@@ -2,9 +2,9 @@ Array jobs
 ---
 
 When running a so-called embarrassingly parallel job or a series of jobs only differing in program input one should use the Slurm feature called an array job.
-Array jobs allows the user to queue a large number of jobs without overburdening the system with an excessive number of jobs.
-Slurm, generally speaking, is better equibbed to handle a moderate number of medium to large sized jobs than a large number of small jobs.
-If one does need to run a large number of small jobs, these should be structured as a moderate number of array jobs which Slurm is better equipped to handle.
+Array jobs allow the user to queue many jobs without overburdening the system with an excessive number of jobs.
+Slurm, generally speaking, is better equipped to handle a moderate number of medium to large sized jobs than many small jobs.
+If one does need to run many small jobs, these should be structured as a moderate number of array jobs which Slurm is better equipped to handle.
 
 To define a job as an array job one includes the directive
 
@@ -14,7 +14,7 @@ To define a job as an array job one includes the directive
 
 This runs the job for all integers in the interval [`<index_min>`,`<index_max>`] in batches of size `<batch_size>`.
 More specifically `<batch_size>` is the maximum number of jobs allowed to run simultaneously.
-Array jobs are named `<job_id>_<array_index>`, but its appearence in the queue depends on the job status.
+Array jobs are named `<job_id>_<array_index>`, but its appearance in the queue depends on the job status.
 A queue with array jobs might look something like this
 
 ```plaintext

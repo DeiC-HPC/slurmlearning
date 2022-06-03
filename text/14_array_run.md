@@ -34,5 +34,5 @@ Exercises
 Please navigate to the directory `~/array_job/cpp/` where you will find a Hello World program in C++ that takes the array index and array length as input, a Makefile and a job script.
 
 1. Add comments to the job script such that you comfortably understand the code.
-2. Run the script and check that it worked as intented.
+2. Run the script and check that it worked as intended.
 3. *Extra*: Redo the above exercises for the other language

@@ -41,6 +41,8 @@ COPY tutorial_code/array_job /home/user/array_job
 RUN groupadd user && useradd -d /home/user -g user user
 RUN chown -R user:user /home/user
 
+ENV USER=user
+
 USER user
 WORKDIR /home/user
 CMD /bin/bash

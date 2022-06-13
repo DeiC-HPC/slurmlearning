@@ -6,14 +6,15 @@ cat > $1.sh <<%EOF%
 #SBATCH --output="out.txt"
 #SBATCH --error="err.txt"
 #SBATCH --time=00:00:30
-#SBATCH --mem=1M
+#SBATCH --mem=50M
+#SBATCH --cpus-per-task=$2
 
-make
-./main.exe
+python3 main.py
 %EOF%
 }
 
-name=run_file
+name=par_python
+ncpus=2
 
-make_run_file ${name}
+make_run_file ${name} ${ncpus}
 sbatch ${name}.sh

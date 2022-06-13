@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 make_run_file() {
 cat > $1.sh <<%EOF%
 #!/bin/bash
@@ -9,8 +8,7 @@ cat > $1.sh <<%EOF%
 #SBATCH --output=job%a_out.txt
 #SBATCH --error=job%a_err.txt
 
-make
-./main.exe \$SLURM_ARRAY_TASK_ID $3
+python3 main.py job_num=\$SLURM_ARRAY_TASK_ID arr_len=$3
 
 %EOF%
 }

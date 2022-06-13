@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 make_run_file() {
 cat > $1.sh <<%EOF%
 #!/bin/bash
@@ -12,14 +11,14 @@ cat > $1.sh <<%EOF%
 #SBATCH --cpus-per-task $4
 
 make
-srun ./main.exe
+srun $SLURM_NTASKS ./main.exe
 %EOF%
 }
 
 name=mult_node
 nodes=2
 nproc=2
-ncpus=1
+ncpus=2
 export OMP_NUM_THREADS=${ncpus}
 
 make_run_file ${name} ${nodes} ${nproc} ${ncpus}

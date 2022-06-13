@@ -6,14 +6,17 @@ cat > $1.sh <<%EOF%
 #SBATCH --output="out.txt"
 #SBATCH --error="err.txt"
 #SBATCH --time=00:00:30
-#SBATCH --mem=1M
+#SBATCH --mem=50M
+#SBATCH --cpus-per-task=$2
 
 make
 ./main.exe
 %EOF%
 }
 
-name=run_file
+name=openmp_fortran
+ncpus=2
+export OMP_NUM_THREADS=${ncpus}
 
-make_run_file ${name}
+make_run_file ${name} ${ncpus}
 sbatch ${name}.sh

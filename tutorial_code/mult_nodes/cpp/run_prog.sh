@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 make_run_file() {
 cat > $1.sh <<%EOF%
 #!/bin/bash
@@ -10,7 +11,7 @@ cat > $1.sh <<%EOF%
 #SBATCH --cpus-per-task $3
 
 make
-mpirun -np $2 ./main.exe
+srun ./main.exe
 %EOF%
 }
 

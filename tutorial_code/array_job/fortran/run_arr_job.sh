@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 make_run_file() {
 cat > $1.sh <<%EOF%
 #!/bin/bash

@@ -1,12 +1,10 @@
-# FROM debian:latest
-FROM ubuntu:jammy
+FROM ubuntu:impish
 STOPSIGNAL SIGRTMIN+3
 
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt update
-RUN apt install -y systemd ssh sudo slurm-wlm slurm-wlm-basic-plugins munge libmunge2 make perl psmisc build-essential wget python3 python3-pip python3-dev python3-mpi4py libopenmpi3 libopenmpi-dev openmpi-bin openmpi-common bash-completion vim emacs nano
+RUN apt update && apt install -y systemd ssh sudo slurm-wlm slurm-wlm-basic-plugins munge libmunge2 libpmi0 libpmi0-dev libpmi2-0 libpmi2-0-dev libpmix-bin make perl psmisc build-essential wget python3 python3-pip python3-dev python3-mpi4py libopenmpi3 libopenmpi-dev openmpi-bin openmpi-common bash-completion vim emacs nano
 
 # TODO: Install newer version of slurm, https://slurm.schedmd.com/download.html, and installation guide, https://slurm.schedmd.com/quickstart_admin.html
 # Currently the version of slurm-wlm is obtained from Ubuntu 21.10 under version (20.11.7+really20.11.4-2)
@@ -21,9 +19,6 @@ RUN systemctl enable slurmctld
 
 COPY slurm.conf /etc/slurm-llnl/slurm.conf
 COPY slurm.conf /etc/slurm/slurm.conf
-
-COPY corelearning/server/term /usr/bin
-RUN chmod +x /usr/bin/term
 
 RUN mkdir /home/user
 COPY tutorial_code/hello_world /home/user/hello_world
@@ -46,4 +41,3 @@ ENV USER=user
 USER user
 WORKDIR /home/user
 CMD /bin/bash
-#CMD service munge start && service slurmctld start && service slurmd start && tail -f /dev/null

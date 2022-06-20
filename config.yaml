@@ -8,4 +8,4 @@ docker-startup-root-cmds:
     - service slurmd start
     - service slurmctld start
 websocket-host: "127.0.0.1"
-motd: ""
+cpu-quota: 0.5

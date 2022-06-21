@@ -15,7 +15,7 @@ Best practice is therefore to match the requested number of compute cores pr. no
 
 Exercises
 ---
-1. Create the alias `mj` (my jobs) for `squeue -u $USER` in `.bashrc`. Remember to source it afterwards.
+1. Create the alias `mj` (my jobs) for `squeue -u $USER` in `.bashrc`. Remember to use the `source` command afterwards. `source` executes commands in your current shell and is therefore useful to use when you change you shell environment.
 2. What does `squeue -h -u $USER -o '%t' | uniq -c` do? Hint: use the [Slurm documentation](https://slurm.schedmd.com/sbatch.html).
 3. How does one cancel a specific job in an array job? How about the entire array of jobs?
 4. How does one cancel all ones pending job on partition debug?

@@ -16,8 +16,8 @@ A Slurm script with the lines
 #SBATCH --nodes=<number_of_nodes>
 ```
 
-thus requests `<number_of_nodes>` nodes with `<number_of_processes_pr_node>` processes on each for a total of `<number_of_nodes>` $\times$ `<number_of_processes_pr_node>` processes.
-Each process will have `<number_of_cpus>` available for a total of `<number_of_cpus>` $\times$ `<number_of_processes_pr_node>` CPU-cores pr. node.
+thus requests `<number_of_nodes>` nodes with `<number_of_processes_pr_node>` processes on each for a total of `<number_of_nodes>` &times; `<number_of_processes_pr_node>` processes.
+Each process will have `<number_of_cpus>` available for a total of `<number_of_cpus>` &times; `<number_of_processes_pr_node>` CPU-cores pr. node.
 
 Please navigate to the directory `~/mult_nodes/` where you will find a Hello World program in C that implements parallelism with both distributed and shared memory through MPI and OpenMP, a Makefile and a run script for the program.
 The program is written such that the standard output clearly, though artificially, shows that the program does indeed run in parallel on multiple threads for each process with the processes distributed to multiple nodes.

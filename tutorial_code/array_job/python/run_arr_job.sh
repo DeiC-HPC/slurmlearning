@@ -8,7 +8,7 @@ cat > $1.sh <<%EOF%
 #SBATCH --output=job%a_out.txt
 #SBATCH --error=job%a_err.txt
 
-python3 main.py job_num=\$SLURM_ARRAY_TASK_ID arr_len=$3
+python3 main.py --job_num=\$SLURM_ARRAY_TASK_ID --arr_len=$3
 
 %EOF%
 }

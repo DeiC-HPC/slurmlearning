@@ -16,6 +16,9 @@ With the argument `--pty bash` it can be used to start an interactive job.
 The most common use is however as a substitute for `mpirun`.
 More on that in the section on jobs with distributed memory parallel programs.
 
+At some point you might want to cancel a job before completion. This can be done with `scancel <jobid>`, where `<jobid>` is the jobid of the job you wish to cancel.
+`scancel` also takes arguments like `-u`, `--state` and `--partition`.
+
 To become familiar with Slurm scripts, their components will be introduced layer by layer through an example.
 Afterwards you will given an exercise where you are to write your own slurm script using the tools introduced to that point.
 This part is organized in directories each focusing on a certain part of the script.

@@ -3,7 +3,7 @@
 #SBATCH --output="out.txt"
 #SBATCH --error="err.txt"
 #SBATCH --time=00:01:00
-#SBATCH --mem=30M
+#SBATCH --mem=1G
 
 make
 ./main.exe

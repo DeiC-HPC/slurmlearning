@@ -18,18 +18,6 @@ When setting time limits for jobs one should estimate how much time each job is 
 As a rule of thumb the time limit should be somewhere between 110% and 120% of the expected run time.
 One can use benchmark tests for such estimates if those are available &mdash; otherwise it is a matter of trial and error.
 
-
-One can use `jobinfo <jobnumber>` to see the current status of a job and once completed the amount of time it took. `<jobnumber>` is the number displayed upon job submission as
-
-
-`Submitted batch job <jobnumber>`
-
-
-It is available in Slurm scipts as `$SLURM_JOB_ID` and can be printed to the output stream as
-```bash
-echo $SLURM_JOB_ID
-```
-
 Exercises
 ---
 

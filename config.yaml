@@ -5,7 +5,7 @@ docker-image: slurm-debian
 docker-hostname: "linux0"
 docker-startup-root-cmds:
     - service munge start
-    - service slurmd start
-    - service slurmctld start
+    - slurmd
+    - slurmctld
 websocket-host: "127.0.0.1"
 cpu-quota: 0.5

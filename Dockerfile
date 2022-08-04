@@ -4,17 +4,31 @@ STOPSIGNAL SIGRTMIN+3
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt update && apt install -y slurm-wlm slurm-wlm-basic-plugins slurm-wlm-basic-plugins-dev libslurm-dev munge libmunge2 libmunge-dev libpmi0 libpmi0-dev libpmi2-0 libpmi2-0-dev libpmix-bin make perl psmisc build-essential wget python3 python3-pip python3-dev python3-mpi4py libopenmpi3 libopenmpi-dev openmpi-bin openmpi-common bash-completion vim emacs nano python-is-python3 gdb
+RUN apt update && apt install -y munge libmunge2 libmunge-dev libpmix-bin libpmix-dev make perl psmisc build-essential wget python3 python3-pip python3-dev python3-mpi4py bash-completion vim emacs nano python-is-python3 gdb libboost-dev
 
-#RUN wget https://download.schedmd.com/slurm/slurm-21.08.8-2.tar.bz2
-#RUN tar -xjf slurm-21.08.8-2.tar.bz2
-#RUN (cd slurm-21.08.8-2; ./configure; make; make install)
-#RUN cp slurm-21.08.8-2/etc/slurmd.service /etc/systemd/system/slurmd.service
-#RUN cp slurm-21.08.8-2/etc/slurmctld.service /etc/systemd/system/slurmctld.service
-#RUN cp slurm-21.08.8-2/etc/init.d.slurm /etc/init.d/slurm
-#RUN chmod +x /etc/init.d/slurm
+# Build and install supported PMIx version
+ADD https://github.com/openpmix/openpmix/releases/download/v3.2.2/pmix-3.2.2.tar.gz /
+RUN tar -xf pmix-3.2.2.tar.gz
+RUN (cd /pmix-3.2.2; ./configure --prefix=/usr/local; make all install)
+
+# Build and install Slurm
+ADD https://download.schedmd.com/slurm/slurm-21.08.8-2.tar.bz2 /
+RUN tar -xjf slurm-21.08.8-2.tar.bz2
+RUN (cd slurm-21.08.8-2; ./configure --with-pmix=/usr/local; make; make install)
+RUN cp slurm-21.08.8-2/etc/slurmd.service /etc/systemd/system/slurmd.service
+RUN cp slurm-21.08.8-2/etc/slurmctld.service /etc/systemd/system/slurmctld.service
+RUN cp slurm-21.08.8-2/etc/init.d.slurm /etc/init.d/slurm
+RUN chmod +x /etc/init.d/slurm
+
+# Build and install Open MPI
+ADD https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.4.tar.gz /
+RUN tar -xzf openmpi-4.1.4.tar.gz
+RUN (cd /openmpi-4.1.4; ./configure --prefix=/usr/local/ --with-slurm --with-pmi=/usr/local --enable-mpi-cxx; make all install)
+
+RUN useradd -r slurm
 
 RUN mkdir /var/spool/slurmd && chown -R slurm:slurm /var/spool/slurm*
+RUN mkdir /var/log/slurm && chown -R slurm:slurm /var/log/slurm
 RUN mkdir /var/log/slurm-llnl && chown -R slurm:slurm /var/log/slurm-llnl
 RUN touch /var/log/slurm_jobacct.log && chown slurm:slurm /var/log/slurm_jobacct.log
 RUN touch /var/log/slurm-llnl/slurmctld.log && chown slurm:slurm /var/log/slurm-llnl/slurmctld.log

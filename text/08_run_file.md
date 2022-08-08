@@ -44,3 +44,24 @@ Exercises
 1. Add comments using `#` to the shell script such that you comfortably understand the code.
 2. Run the script and check that it works as intended.
 3. Change the script such that e.g. the memory and time limits are passed as arguments to `make_run_file`.
+
+    ```answer
+    make_run_file() {
+    cat > $1.sh <<%EOF%
+    #!/bin/bash
+    #SBATCH --job-name=$1
+    #SBATCH --output="out.txt"
+    #SBATCH --error="err.txt"
+    #SBATCH --time=$2
+    #SBATCH --mem=$3
+
+    make
+    ./main.exe
+    %EOF%
+    }
+
+    name=run_file
+
+    make_run_file ${name} 00:00:30 1M
+    sbatch ${name}.sh
+    ```

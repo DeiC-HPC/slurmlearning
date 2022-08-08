@@ -26,5 +26,24 @@ Please navigate to the directory `~/limits/time/`.
 1. Submit the job.
 2. The job should be killed by Slurm.
    1. Why?
+
+      ```answer
+      It runs over the time limit set by the Slurm script
+      ```
    2. Fix the problem in the Slurm script.
+
+      ```answer
+      In the slurm script change:
+      #SBATCH --time=00:01:00
+      To:
+      #SBATCH --time=00:02:00
+
+      Or reduce the amount of sleep in main.cpp
+      ```
 3. Describe how to properly choose a time limit for a job.
+
+   ```answer
+   Run some benchmarks, for estimates, or use trial and error.
+   You should also add 10-20% to your estimate to make sure
+   that the job does not run out of time.
+   ```

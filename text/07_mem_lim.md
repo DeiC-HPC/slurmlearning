@@ -21,4 +21,14 @@ Please navigate to the directory `~/limits/memory/`.
 1. Submit the job.
 2. The job should be killed by Slurm.
    1. Why?
+
+      ```answer
+      It used too much memory. It got killed by the OOM killer.
+      ```
 3. Describe how to properly choose a memory limit for a job.
+
+   ```answer
+   It is a case of trial and error.
+   Running test programs and monitoring their usages can help.
+   You can then multiply the baseline and add 10-20%.
+   ```

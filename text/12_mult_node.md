@@ -28,3 +28,58 @@ Exercises
 At this point you are hopefully fairly comfortable with the Slurm syntax for CPU allocation.
 2. Write a shell script that runs either the C++, fortran or python program. *Obs*: these programs will not print what nodes they run on.
 3. *Extra*: Redo the above exercises for the other languages
+
+  ```answer
+  For C++:
+  #!/usr/bin/env bash
+  make_run_file() {
+  cat > $1.sh <<%EOF%
+  #!/bin/bash
+  #SBATCH --job-name=$1
+  #SBATCH --output="out.txt"
+  #SBATCH --error="err.txt"
+  #SBATCH --time=00:00:30
+  #SBATCH --mem=150M
+  #SBATCH --ntasks-per-node $2
+  #SBATCH --cpus-per-task $3
+
+  make
+  srun ./main.exe
+  %EOF%
+  }
+
+  name=nested_cpp
+  nproc=2
+  ncpus=2
+  export OMP_NUM_THREADS=${ncpus}
+
+  make_run_file ${name} ${nproc} ${ncpus}
+  sbatch ${name}.sh
+
+  For Fortran:
+  make_run_file() {
+  cat > $1.sh <<%EOF%
+  #!/bin/bash
+  #SBATCH --job-name=$1
+  #SBATCH --output="out.txt"
+  #SBATCH --error="err.txt"
+  #SBATCH --time=00:00:30
+  #SBATCH --mem=150M
+  #SBATCH --nodes $2
+  #SBATCH --ntasks-per-node $3
+  #SBATCH --cpus-per-task $4
+
+  make
+  srun $SLURM_NTASKS ./main.exe
+  %EOF%
+  }
+
+  name=mult_node
+  nodes=2
+  nproc=2
+  ncpus=2
+  export OMP_NUM_THREADS=${ncpus}
+
+  make_run_file ${name} ${nodes} ${nproc} ${ncpus}
+  sbatch ${name}.sh
+  ```

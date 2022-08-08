@@ -32,7 +32,36 @@ Exercises
 1. Run the Slurm script using `sbatch slurmscript.sh` to submit the job to the Slurm queue.
 2. Write a Slurm script for either the fortran or python program.
 3. Redirect the error stream to a file called `err.txt` in your Slurm script.
+
+   ```answer
+   Add
+   #SBATCH --error="err.txt"
+   to the slurm script
+   ```
 4. Run the Slurm script without redirecting the output stream.
    1. What is the output file called?
    2. Does the name change with subsequent runs?
+
+      ```answer
+      Yes, it will be named slurm-<jobnumber>.out.
+      ```
 5. *Extra*: Redo the above exercises for the other language.
+
+   ```answer
+   For Python:
+   #!/bin/bash
+   #SBATCH --job-name=hello_world_python
+   #SBATCH --output="out.txt"
+   #SBATCH --time=00:00:30
+
+   python3 main.py
+
+   For Fortran:
+   #!/bin/bash
+   #SBATCH --job-name=hello_world_fortran
+   #SBATCH --output="out.txt"
+   #SBATCH --time=00:00:30
+
+   make
+   ./main.exe
+   ```
